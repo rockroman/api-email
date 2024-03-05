@@ -65,13 +65,15 @@ SECRET_KEY = 'django-insecure-6wb#ip0z2!i%o*pqxqwu4wmwrn)l_y!dnzo_k=#f*@%ttv2e!o
 # DEBUG = "DEBUG" in os.environ
 DEBUG = True
 ALLOWED_HOSTS = [
+    'emali-api-verify-a9c7b6cf5c05.herokuapp.com',
     os.environ.get("ALLOWED_HOST"),
     "localhost",
      '8000-rockroman-vitemoments-47hrl09xv4p.ws-eu108.gitpod.io'
 ]
 # if "CLIENT_ORIGIN" in os.environ:
 
-CORS_ALLOWED_ORIGINS = [os.environ.get("CLIENT_ORIGIN"),'https://5173-rockroman-vitemoments-47hrl09xv4p.ws-eu108.gitpod.io']
+CORS_ALLOWED_ORIGINS = [os.environ.get("CLIENT_ORIGIN")]
+# CORS_ALLOWED_ORIGINS = [os.environ.get("CLIENT_ORIGIN"),'https://5173-rockroman-vitemoments-47hrl09xv4p.ws-eu108.gitpod.io']
 CSRF_TRUSTED_ORIGINS = ['https://5173-rockroman-vitemoments-47hrl09xv4p.ws-eu108.gitpod.io',
 'https://5173-rockroman-vitemoments-47hrl09xv4p.ws-eu108.gitpod.io']
 
