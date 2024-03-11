@@ -27,7 +27,7 @@ const NavigationBar = () => {
   };
   const loggedOutIcons = (
     <>
-      <NavLink to="/accounts/login/" className={styles.NavLink}>
+      <NavLink to="/login/" className={styles.NavLink}>
         <i className="fas fa-sign-in-alt mx-1"></i>Sign in
       </NavLink>
       <NavLink to="/signUp" className={styles.NavLink}>

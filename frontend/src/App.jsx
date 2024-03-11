@@ -47,7 +47,7 @@ function App() {
               />
             }
           />
-          <Route path="/accounts/login/" element={<SignInForm />} />
+          <Route path="/login/" element={<SignInForm />} />
           <Route path="/signUp" element={<SignUpForm />} />
           <Route path="/posts/create" element={<PostCreateForm />} />
           <Route path="/posts/:id" element={<PostPage />} />
