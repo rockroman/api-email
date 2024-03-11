@@ -37,32 +37,32 @@ urlpatterns = [
     # path('api/', include('comments.urls')),
     # path('api/', include('likes.urls')),
     # path('api/', include('followers.urls')),
-    path('', root_route),
-    
+    # path('', root_route),
+    path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
+    path('api/api-auth/', include('rest_framework.urls')),
       # our logout route has to be above the default one to be matched first
-    path('dj-rest-auth/logout/', logout_route),
+    path('api/dj-rest-auth/logout/', logout_route),
 
-    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('api/dj-rest-auth/', include('dj_rest_auth.urls')),
     path(
-        'dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')
+        'api/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')
     ),
     # email verification try
 
-        path('account-confirm-email/<str:key>/', ConfirmEmailView.as_view()),
-      path('verify-email/',
+        path('api/account-confirm-email/<str:key>/', ConfirmEmailView.as_view()),
+      path('api/verify-email/',
          VerifyEmailView.as_view(), name='rest_verify_email'),
     # path('account-confirm-email/',
     #      VerifyEmailView.as_view(), name='account_email_verification_sent'),
-    re_path(r'^account-confirm-email/(?P<key>[-:\w]+)/$',
+    re_path(r'^api/account-confirm-email/(?P<key>[-:\w]+)/$',
          VerifyEmailView.as_view(), name='account_confirm_email'),
-    path('', include('profiles.urls')),
-    path('', include('posts.urls')),
-    path('', include('comments.urls')),
-    path('', include('likes.urls')),
-    path('', include('followers.urls')),
+    path('api/', include('profiles.urls')),
+    path('api/', include('posts.urls')),
+    path('api/', include('comments.urls')),
+    path('api/', include('likes.urls')),
+    path('api/', include('followers.urls')),
 ]
 
 
-# handler404 = TemplateView.as_view(template_name='index.html')
+handler404 = TemplateView.as_view(template_name='index.html')

@@ -26,7 +26,8 @@ const PostsPage = ({ message, filter = "" }) => {
     const fetchPosts = async () => {
       try {
         const { data } = await axiosReq.get(
-          `/api/posts/?${filter}search=${query}`
+          // `/api/posts/?${filter}search=${query}`
+          `/posts/?${filter}search=${query}`
         );
         setPosts(data);
         setHasLoaded(true);

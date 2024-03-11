@@ -12,6 +12,7 @@ import PostsPage from "./pages/posts/PostsPage";
 import { useCurrentUser } from "./context/CurrentUserCntxt";
 import PostEditForm from "./pages/posts/PostEditForm";
 import ProfilePage from "./profiles/ProfilePage";
+import VerEmail from "./components/VerEmail";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -46,12 +47,13 @@ function App() {
               />
             }
           />
-          <Route path="/signIn" element={<SignInForm />} />
+          <Route path="/accounts/login/" element={<SignInForm />} />
           <Route path="/signUp" element={<SignUpForm />} />
           <Route path="/posts/create" element={<PostCreateForm />} />
           <Route path="/posts/:id" element={<PostPage />} />
           <Route path="/posts/:id/edit" element={<PostEditForm />} />
           <Route path="/profiles/:id" element={<ProfilePage />} />
+          <Route path="/verify/" element={<VerEmail/>} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
       </Container>

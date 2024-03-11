@@ -17,8 +17,8 @@ const NavigationBar = () => {
   const setCurrentUser = useSetCurrentUser();
   const handleSignout = async () => {
     try {
-      axios.post("/api/dj-rest-auth/logout/");
-      // axios.post("/dj-rest-auth/logout/");
+      // axios.post("/api/dj-rest-auth/logout/");
+      axios.post("/dj-rest-auth/logout/");
       setCurrentUser(null);
       removeTokenTimestamp();
     } catch (error) {
@@ -27,7 +27,7 @@ const NavigationBar = () => {
   };
   const loggedOutIcons = (
     <>
-      <NavLink to="/signIn" className={styles.NavLink}>
+      <NavLink to="/accounts/login/" className={styles.NavLink}>
         <i className="fas fa-sign-in-alt mx-1"></i>Sign in
       </NavLink>
       <NavLink to="/signUp" className={styles.NavLink}>

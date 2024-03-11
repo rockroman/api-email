@@ -17,8 +17,8 @@ export const CurrentUserProvider = ({ children }) => {
   const handleMount = async () => {
     console.log("request to get user");
     try {
-      const { data } = await axiosRes.get("/api/dj-rest-auth/user/");
-      // const { data } = await axiosResponse.get("dj-rest-auth/user/");
+      // const { data } = await axiosRes.get("/api/dj-rest-auth/user/");
+      const { data } = await axiosRes.get("/dj-rest-auth/user/");
       // console.log(data);
       setCurrentUser(data);
     } catch (err) {
@@ -36,11 +36,13 @@ export const CurrentUserProvider = ({ children }) => {
       async (config) => {
         if (shouldRefreshToken()) {
           try {
-            await axios.post("/api/dj-rest-auth/token/refresh/");
+            // await axios.post("/api/dj-rest-auth/token/refresh/");
+            await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
-                navigate("/signin");
+                // navigate("/signin");
+                navigate("/accounst/login/");
               }
               return null;
             });
@@ -61,11 +63,14 @@ export const CurrentUserProvider = ({ children }) => {
       async (err) => {
         if (err.response?.status === 401) {
           try {
-            await axios.post("/api/dj-rest-auth/token/refresh/");
+            // await axios.post("/api/dj-rest-auth/token/refresh/");
+            await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
-                navigate("/signin");
+                // navigate("/signin");
+                navigate("/accounst/login/");
+
               }
               return null;
             });

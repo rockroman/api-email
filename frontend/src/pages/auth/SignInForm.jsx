@@ -169,8 +169,8 @@ function SignInForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/dj-rest-auth/login/", signInData);
-      // const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      // const { data } = await axios.post("/api/dj-rest-auth/login/", signInData);
+      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       console.log("this is data", data);
       setCurrentUser(data.user);
       setTokenTimestamp(data);

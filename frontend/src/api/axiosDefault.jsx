@@ -6,7 +6,7 @@
 // Setting a baseURL before you reach deployment will cause errors
 
 import axios from "axios";
-// axios.defaults.baseURL = "api/";
+axios.defaults.baseURL = "/api";
 // axios.defaults.baseURL =
 //   "https://8000-codeinstitutesol-drfapi-kq1v2uy3bpa.ws-eu108.gitpod.io/";
 // axios.defaults.baseURL = "https://moments-vite-8f5b71fb9a70.herokuapp.com/";
